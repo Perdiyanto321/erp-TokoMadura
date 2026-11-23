@@ -1,0 +1,61 @@
+@import '@fontsource/ibm-plex-sans/400.css';
+@import '@fontsource/ibm-plex-sans/500.css';
+@import '@fontsource/ibm-plex-sans/600.css';
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../views/**/*.blade.php';
+
+:root {
+  /* Token Warna Sesuai Bab 7.3 */
+  --latar:        #F1F3F4;
+  --permukaan:    #FFFFFF;
+  --garis:        #D5DBDF;
+  --garis-kuat:   #B8C2C9;
+  --teks:         #1D2B33;
+  --teks-redup:   #55646E;
+  --primer:       #1B5E7B;  /* Biru Petrol */
+  --primer-gelap: #154B63;
+  --primer-muda:  #E3EEF3;  /* Menu aktif / terpilih */
+  --sukses:       #2F7D52;
+  --peringatan:   #A8661A;  /* Kunyit tua: stok minimum / jatuh tempo */
+  --bahaya:       #B03A2E;
+
+  --r-kontrol: 3px;
+  --r-panel:   6px;
+}
+
+body {
+  font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  color: var(--teks);
+  background-color: var(--latar);
+  margin: 0;
+  padding: 0;
+}
+
+.angka {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+[x-cloak] {
+  display: none !important;
+}
+
+/* Print styling untuk struk thermal 58mm */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #area-cetak-struk, #area-cetak-struk * {
+    visibility: visible;
+  }
+  #area-cetak-struk {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 58mm;
+  }
+}
